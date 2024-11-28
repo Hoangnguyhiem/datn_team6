@@ -26,7 +26,7 @@ const ListPage = (props: Props) => {
     const { data: products, isLoading } = useQuery({
         queryKey: ['products', id, categoryIds, sizeIds, priceCheck, color],
         queryFn: () => {
-            return axios.post(`http://127.0.0.1:8000/api/client/categories/${id}`, { sizes: sizeIds.length === 0 ? "" : sizeIds, category_ids: categoryIds.length === 0 ? "" : categoryIds, price_range: priceCheck, colors: color.length === 0 ? "" : color })
+            return axios.post(`https://beestylel.site/api/client/categories/${id}`, { sizes: sizeIds.length === 0 ? "" : sizeIds, category_ids: categoryIds.length === 0 ? "" : categoryIds, price_range: priceCheck, colors: color.length === 0 ? "" : color })
         }
     })
 
@@ -34,21 +34,21 @@ const ListPage = (props: Props) => {
     const { data: categoryChildren } = useQuery({
         queryKey: ['categoryChildren', id],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/categories/${id}/children`)
+            return axios.get(`https://beestylel.site/api/client/categories/${id}/children`)
         }
     })
 
     const { data: colors } = useQuery({
         queryKey: ['colors'],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/categories/colors`)
+            return axios.get(`https://beestylel.site/api/client/categories/colors`)
         }
     })
 
     const { data: size } = useQuery({
         queryKey: ['size'],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/categories/${id}/sizes`)
+            return axios.get(`https://beestylel.site/api/client/categories/${id}/sizes`)
         }
     })
 

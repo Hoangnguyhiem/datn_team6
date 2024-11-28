@@ -22,7 +22,7 @@ const AddressesPage = (props: Props) => {
     const { data: addresses, isLoading: isLoadingAddress } = useQuery({
         queryKey: ['addresses'],
         queryFn: async () => {
-            return await axios.get(`http://127.0.0.1:8000/api/client/shippingaddress`, {
+            return await axios.get(`https://beestylel.site/api/client/shippingaddress`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
@@ -33,7 +33,7 @@ const AddressesPage = (props: Props) => {
     const { mutate } = useMutation({
         mutationFn: (addressId: any) => {
             try {
-                return axios.delete(`http://127.0.0.1:8000/api/client/shippingaddress/${addressId}`, {
+                return axios.delete(`https://beestylel.site/api/client/shippingaddress/${addressId}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

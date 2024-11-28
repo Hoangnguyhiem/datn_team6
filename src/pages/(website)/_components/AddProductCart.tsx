@@ -24,7 +24,7 @@ const AddProductCart = ({ cartItem, activeCart, setActiveCart }: Props) => {
     const { mutate } = useMutation({
         mutationFn: async (cart: any) => {
             try {
-                await axios.post(`http://127.0.0.1:8000/api/client/cart/add`, cart, {
+                await axios.post(`https://beestylel.site/api/client/cart/add`, cart, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Truyền token vào header
                     },

@@ -35,7 +35,7 @@ const ViewAccount = (props: Props) => {
         queryKey: ['user', token],
         queryFn: () => {
             if (!token) return null;
-            return axios.get(`http://127.0.0.1:8000/api/client/auth/profile`, {
+            return axios.get(`https://beestylel.site/api/client/auth/profile`, {
                 headers: { Authorization: `Bearer ${token}` }
             })
         }
@@ -45,7 +45,7 @@ const ViewAccount = (props: Props) => {
     const { data: order, isLoading: isLoadingOrder } = useQuery({
         queryKey: ['order'],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/products`, {
+            return axios.get(`https://beestylel.site/api/client/products`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`, // Truyền token vào header
                 },

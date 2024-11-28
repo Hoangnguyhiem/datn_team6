@@ -13,7 +13,7 @@ export const useOrderViewMutations = () => {
             try {
                 console.log(bill_id);
                 
-                await axios.post(`http://127.0.0.1:8000/api/client/products/orders/cancel/${bill_id}`,{
+                await axios.post(`https://beestylel.site/api/client/products/orders/cancel/${bill_id}`,{
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     }
@@ -41,7 +41,7 @@ export const useOrderViewMutations = () => {
     const evaluateOrder = useMutation({
         mutationFn: async (data: any) => {
             try {
-                await axios.post(`http://127.0.0.1:8000/api/client/comment/store`, data , {
+                await axios.post(`https://beestylel.site/api/client/comment/store`, data , {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     }

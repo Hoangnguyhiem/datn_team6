@@ -14,7 +14,7 @@ const ProductHot = (props: Props) => {
   const { data: hotpr } = useQuery({
     queryKey: ["hotpr"],
     queryFn: async () => {
-      return await axios.get(`http://127.0.0.1:8000/api/client/home/productnewhot`)
+      return await axios.get(`https://beestylel.site/api/client/home/productnewhot`)
     }
   })
 

@@ -20,7 +20,7 @@ const Favorite = (props: Props) => {
         try {
             if (status) {
                 // Thêm sản phẩm vào danh sách yêu thích
-                const data = await axios.post(`http://127.0.0.1:8000/api/client/wishlist/add`, { product_id: id }, {
+                const data = await axios.post(`https://beestylel.site/api/client/wishlist/add`, { product_id: id }, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -29,7 +29,7 @@ const Favorite = (props: Props) => {
 
             } else {
                 // Xóa sản phẩm khỏi danh sách yêu thích
-                await axios.delete(`http://127.0.0.1:8000/api/client/wishlist/remove/${id}`, {
+                await axios.delete(`https://beestylel.site/api/client/wishlist/remove/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -43,7 +43,7 @@ const Favorite = (props: Props) => {
     const { data: favorite, isLoading } = useQuery({
         queryKey: ['favorite', token],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/wishlist`, {
+            return axios.get(`https://beestylel.site/api/client/wishlist`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

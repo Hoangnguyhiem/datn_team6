@@ -81,7 +81,7 @@ const PageSignup = (props: Props) => {
     const { mutate } = useMutation({
         mutationFn: async (auth: any) => {
             try {
-                const use = await axios.post(`http://localhost:8000/api/client/auth/signup`, auth)
+                const use = await axios.post(`https://beestylel.site/api/client/auth/signup`, auth)
                 console.log(use);
 
             } catch (error) {

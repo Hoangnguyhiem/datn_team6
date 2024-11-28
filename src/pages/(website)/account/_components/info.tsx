@@ -13,7 +13,7 @@ const InfoPage = (props: Props) => {
       queryKey: ['user', token],
       queryFn: () => {
           if (!token) return null;
-          return axios.get(`http://127.0.0.1:8000/api/client/auth/profile` , {
+          return axios.get(`https://beestylel.site/api/client/auth/profile` , {
               headers: { Authorization: `Bearer ${token}` }
           })
       }

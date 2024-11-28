@@ -12,7 +12,7 @@ export const useOrderMutations = () => {
     const orderCod = useMutation({
         mutationFn: async (order: any) => {
             try {
-                await axios.post(`http://127.0.0.1:8000/api/client/products/purchase`, order, {
+                await axios.post(`https://beestylel.site/api/client/products/purchase`, order, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     }
@@ -47,7 +47,7 @@ export const useOrderMutations = () => {
     const orderATM = useMutation({
         mutationFn: async (order: any) => {
             try {
-                const {data} = await axios.post(`http://localhost:8000/api/client/payment/`, order, {
+                const {data} = await axios.post(`https://beestylel.site/api/client/payment/`, order, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     }

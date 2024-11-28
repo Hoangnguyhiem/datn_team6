@@ -21,7 +21,7 @@ const CommentEvaluate = () => {
     const { data: comment, isLoading } = useQuery({
         queryKey: ['comment', product_id],
         queryFn: async () => {
-            return await axios.post(`http://localhost:8000/api/client/comment/list`, { product_id });
+            return await axios.post(`https://beestylel.site/api/client/comment/list`, { product_id });
         },
     })
 

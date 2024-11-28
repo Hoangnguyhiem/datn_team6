@@ -21,7 +21,7 @@ const WishlistPage = (props: Props) => {
     const { data: favorite, isLoading: isLoadingWishList } = useQuery({
         queryKey: ['favorite'],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/wishlist`, {
+            return axios.get(`https://beestylel.site/api/client/wishlist`, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Truyền token vào header
                 },
@@ -35,7 +35,7 @@ const WishlistPage = (props: Props) => {
     const { mutate } = useMutation({
         mutationFn: async (productId: any) => {
             try {
-                return await axios.delete(`http://127.0.0.1:8000/api/client/wishlist/remove/${productId}`, {
+                return await axios.delete(`https://beestylel.site/api/client/wishlist/remove/${productId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Truyền token vào header
                     },

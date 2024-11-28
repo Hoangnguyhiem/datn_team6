@@ -94,7 +94,7 @@ const CheckAddresses = ({ selectedAddress, handleSelectProduct, isCheckAddresses
     const { data: addresses } = useQuery({
         queryKey: ['addresses'],
         queryFn: async () => {
-            const data = await axios.get(`http://127.0.0.1:8000/api/client/shippingaddress`, {
+            const data = await axios.get(`https://beestylel.site/api/client/shippingaddress`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

@@ -36,7 +36,7 @@ const DetailPage = () => {
     const { data: products, isLoading, isError, error } = useQuery({
         queryKey: ['products', id],
         queryFn: async () => {
-            return await axios.get(`http://127.0.0.1:8000/api/client/products/showDetail/${id}`);
+            return await axios.get(`https://beestylel.site/api/client/products/showDetail/${id}`);
         },
     })
 
@@ -80,7 +80,7 @@ const DetailPage = () => {
     const { mutate } = useMutation({
         mutationFn: async (cart: any) => {
             try {
-                await axios.post(`http://127.0.0.1:8000/api/client/cart/add`, cart, {
+                await axios.post(`https://beestylel.site/api/client/cart/add`, cart, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Truyền token vào header
                     },

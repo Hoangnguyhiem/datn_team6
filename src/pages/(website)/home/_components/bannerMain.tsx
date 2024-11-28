@@ -11,7 +11,7 @@ const BannerMain = (props: Props) => {
     const { data: banner, isLoading } = useQuery({
         queryKey: ["banner"],
         queryFn: async () => {
-            return await axios.get(`http://127.0.0.1:8000/api/client/home/bannermain`)
+            return await axios.get(`https://beestylel.site/api/client/home/bannermain`)
         }
     })
 

@@ -15,7 +15,7 @@ export const useProductMutations = () => {
                 console.log(productData);
                 
                 // Gọi API update sản phẩm
-                return await axios.put(`http://127.0.0.1:8000/api/client/cart/update/${cartId}` , { product_id, quantity, product_variation_value_id}, {
+                return await axios.put(`https://beestylel.site/api/client/cart/update/${cartId}` , { product_id, quantity, product_variation_value_id}, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Truyền token vào header
                       }
@@ -44,7 +44,7 @@ export const useProductMutations = () => {
         mutationFn: async ({token, productId} : any) => {
             try {
                 // Gọi API update sản phẩm
-                return await axios.delete(`http://127.0.0.1:8000/api/client/cart/${productId}`, {
+                return await axios.delete(`https://beestylel.site/api/client/cart/${productId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`, // Truyền token vào header
                       }

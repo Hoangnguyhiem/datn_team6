@@ -18,7 +18,7 @@ const Header = ({ isSearch, setIsSearch }: Props) => {
     const { data: categorires } = useQuery({
         queryKey: ['categories'],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/categories`)
+            return axios.get(`https://beestylel.site/api/client/categories`)
         }
     })
 
@@ -27,7 +27,7 @@ const Header = ({ isSearch, setIsSearch }: Props) => {
     const { data: user, isLoading } = useQuery({
         queryKey: ['user', token],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/auth/profile`, {
+            return axios.get(`https://beestylel.site/api/client/auth/profile`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             })
         }
@@ -36,7 +36,7 @@ const Header = ({ isSearch, setIsSearch }: Props) => {
     const { data: carts, isLoading: isLoadingCarts } = useQuery({
         queryKey: ['carts', token],
         queryFn: () => {
-            return axios.get(`http://127.0.0.1:8000/api/client/cart`, {
+            return axios.get(`https://beestylel.site/api/client/cart`, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Truyền token vào header
                 }

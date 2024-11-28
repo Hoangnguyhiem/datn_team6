@@ -77,7 +77,7 @@ const Router = () => {
             const token = localStorage.getItem("token")
             if (token) {
                 try {
-                    const response = await axios.get("http://127.0.0.1:8000/api/client/auth/profile", {
+                    const response = await axios.get("https://beestylel.site/api/client/auth/profile", {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },

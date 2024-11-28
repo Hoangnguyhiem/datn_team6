@@ -126,7 +126,7 @@ const UpdateAddresses = ({ isCheckAddresses, idAddresses, isUpdateAddresses, set
     const { mutate } = useMutation({
         mutationFn: (addressData: any) => {
             try {
-                return axios.put(`http://127.0.0.1:8000/api/client/shippingaddress/${idAddresses.id}`, addressData, {
+                return axios.put(`https://beestylel.site/api/client/shippingaddress/${idAddresses.id}`, addressData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
